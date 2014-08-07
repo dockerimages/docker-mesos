@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Frank Lemanschik @ Direkt SPEED Europe <frank@dspeed.eu>
-echo "deb http://repos.mesosphere.io/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/mesosphere.list
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
+RUN echo "deb http://repos.mesosphere.io/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/mesosphere.list
+RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
 RUN env DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y --fix-missing --force-yes python2.7 libsasl2-2 libcurl3 curl wget unzip default-jre-headless python python-setuptools python-pip python-protobuf mesos && \
     echo manual > /etc/init/mesos-slave.override && \
