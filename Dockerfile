@@ -21,3 +21,7 @@ RUN echo "NOTE: We add Mesos ubuntu repo for trusty run apt update and install i
  && echo "NOTE: We Overwrite the Init Settings of Mesos" \
  && echo manual > /etc/init/mesos-slave.override \
  && echo manual > /etc/init/mesos-master.override
+EXPOSE 5051
+EXPOSE 5050
+CMD ["/usr/local/sbin/mesos-slave"]
+#CMD ["/usr/local/sbin/mesos-master"]
