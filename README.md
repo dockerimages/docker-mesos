@@ -1,4 +1,4 @@
-dockerimage-libmesos-ubuntu
+DEPRECATED: use https://github.com/dockerimages/mesosphere-docker
 ===========================
 
 The Updated Version of libmesos/ubuntu
